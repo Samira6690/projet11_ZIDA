@@ -41,7 +41,7 @@ Route::post('/ajouter1/traitement1',[TuteurController::class, 'ajouter1_tuteur_t
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/delete-post/{id}',[PostController::class, 'delete_post']);
-Route::get('/updat-post/{id}',[PostController::class, 'update1_post']);
+Route::get('/updat-post/{id}',[PostController::class, 'updat1_post']);
 
 Route::post('/updat/traitement',[PostController::class, 'updat_post_traitement']);
 Route::get('/post',[PostController::class, 'list_post']);
@@ -54,8 +54,8 @@ Route::get('/updat1-tag/{id}',[TagController::class, 'updat1_tag']);
 
 Route::post('/updat1/traitement',[TagController::class, 'updat1_tag_traitement']);
 Route::get('/tag',[TagController::class, 'list1_tag']);
-Route::get('/tag',[TagController::class, 'ajout1_tag']);
-Route::post('/tag/traitement',[TagController::class, 'ajout1_tag_traitement']);
+Route::get('/ajout1',[TagController::class, 'ajout1_tag']);
+Route::post('/ajout1/traitement',[TagController::class, 'ajout1_tag_traitement']);
 
 
 

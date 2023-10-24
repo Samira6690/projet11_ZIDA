@@ -14,12 +14,10 @@
             <div class="col s12">
                 <h1>PROJET 11</h1>
                 <hr>
-                 <a href="post/" class="btn btn-primary">POST</a>
-                 <a href="tag/" class="btn btn-primary">TAG</a>
                  <a href="ajout/" class="btn btn-primary">Ajouter un post</a>
-                 <a href="post/" class="btn btn-primary">Revenir à la liste des posts</a>
-
-
+                 <a href="etudiant/" class="btn btn-primary">Liste des étudiants</a>
+                 <a href="tuteur/" class="btn btn-primary">Liste des tuteurs</a>
+                 <a href="tag/" class="btn btn-primary">Liste des tags</a>
                 <hr>
                 @if (session('status'))
                 <div class="alert alert-succes">
@@ -32,6 +30,7 @@
         <th>#</th>
         <th>Titre</th>
         <th>Contenu</th>
+        <th>Tag</th>
     </tr>
 </thead>
 <tbody>
@@ -43,6 +42,8 @@
         <td>{{$ide }}</td>
         <td>{{ $post->titre }}</td>
         <td>{{ $post->contenu }}</td>
+        <td>{{ $post->nom}}</td>
+
         <td>
             <a href="/updat-post/{{ $post->id }}" class="btn btn-info">Update</a>
             <a href="/delete-post/{{ $post->id }}" class="btn btn-danger">Delete</a>

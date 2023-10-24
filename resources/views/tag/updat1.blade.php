@@ -30,7 +30,7 @@
     <input type="text" name="id" style="display: none" value="{{ $tag->id }}">
                 <div class="form-group">
                     <label for="Nom">Nom</label>
-                    <input type="text" class="form-control" id="Nom" name="nom" value="{{ $tuteur->nom }}">
+                    <input type="text" class="form-control" id="Nom" name="nom" value="{{ $tag->nom }}">
                 </div>
 
 <button type="submit" class="btn btn-primary">MODIFIER UN TAG</button><br><br>

@@ -45,12 +45,18 @@ class EtudiantController extends Controller
         $etudiant ->nom = $request->nom;
         $etudiant ->prenom = $request->prenom;
         $etudiant ->classe = $request->classe;
-        $etudiant ->tuteur_id= $request->tuteur;
         $etudiant ->photo= $request->image;
+        $etudiant ->tuteur_id= $request->tuteur;
         $etudiant ->ville_id= $request->ville;
         $etudiant ->nationalité_id= $request->nationalité;
         $etudiant ->groupe_id= $request->groupe;
-
+        ////
+        // if ($request->hasFile('image')){
+        //     $image = $request->file('image');
+        //     $imageName = time () . '.' . $image->getClientOriginalExtension();
+        //     $image->move(public_path('images'), $imageName);
+        //     $etudiant->photo = $imageName;
+        // }
         $etudiant->save();
 
         return redirect('/ajouter')->with('status', 'L\'étudiant a bien été ajouté avec susses');
@@ -85,6 +91,15 @@ class EtudiantController extends Controller
          $etudiant ->ville_id= $request->ville;
          $etudiant ->nationalité_id= $request->nationalité;
          $etudiant ->groupe_id= $request->groupe;
+
+
+         ////
+        //  if ($request->hasFile('image')){
+        //     $image = $request->file('image');
+        //     $imageName = time () . '.' . $image->getClientOriginalExtension();
+        //     $image->move(public_path('image'), $imageName);
+        //     $etudiant->photo = $imageName;
+        //  }
         $etudiant->update();
         return redirect('/etudiant')->with('status', 'L\'étudiant a bien été modifier avec susses');
 

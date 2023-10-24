@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PROJET 10</title>
+    <title>PROJET 11</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap.min.css.map">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -30,10 +30,20 @@
                 <div class="form-group">
                     <label for="Titre">Titre</label>
                     <input type="text" class="form-control" id="Titre" name="titre">
-                </div>
+                </div><br>
+                <label for="text">Contenu</label>
                 <div class="form-group">
-                    <label for="Contenu">Contenu</label>
-                    <input type="text" class="form-control" id="Contenu" name="contenu">
+<textarea name="contenu" id="contenu" cols="30" rows="10"></textarea>
+    </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" name="tag_id" id="tag_id">
+                        <option value="selected">Sélectionnez un tag</option>
+                        @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}">
+                            {{ $tag->nom }}
+                        </option>
+                        @endforeach
+                </select>
                 </div><br>
 
 
@@ -43,7 +53,7 @@
                 </div><br>    --}}
 
 <button type="submit" class="btn btn-primary">AJOUTER UN POST</button><br><br>
-<a href="/tuteur" class="btn btn-danger">Revenir à la liste des posts</a>
+<a href="/post" class="btn btn-danger">Revenir à la liste des posts</a>
 </form>
 
             </div>

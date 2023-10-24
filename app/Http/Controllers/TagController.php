@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\PostTag;
 use App\Models\Post;
 class TagController extends Controller
 {
     public function list1_tag()
     {
     $tags = Tag::all();
-       return view('tag.list', compact('tags'));
+       return view('tag.list1', compact('tags'));
     }
     public function ajout1_tag()
     {
-        return view('tag.ajout1');
+        $tags = Tag::all();
+        return view('tag.ajout1', compact('tags'));
     }
     public function ajout1_tag_traitement(Request $request)
 
@@ -28,15 +30,15 @@ class TagController extends Controller
         return redirect('/ajout1')->with('status', 'Le tag a bien été ajouté avec succes');
     }
     public function updat1_tag($id){
-        $tag = Tag::find($id);
+        $tags = Tag::find($id);
         // $etudiant = Etudiant::all();
 
-        return view('tag.updat1', compact('tag'));
+        return view('tag.updat1', compact('tags'));
     }
     public function updat1_tag_traitement(Request $request){
         $request->validate([
         ]);
-        $tag =  Tag::find($request->id);
+        $tag = Tag::find($request->id);
         $tag ->nom = $request->nom;
         $tag->update();
 

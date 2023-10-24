@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projet 10</title>
+    <title>Projet 11</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap.min.css.map">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -12,12 +12,12 @@
     <div class="container text-center">
         <div class="row">
             <div class="col s12">
-                <h1>PROJET 10</h1>
+                <h1>PROJET 11</h1>
                 <hr>
                 <a href="/tuteur" class="btn btn-primary">Revenir à la liste des tuteurs</a>
                 <a href="/ajouter" class="btn btn-primary">Ajouter un étudiant</a>
-                 <a href="/" class="btn btn-primary">POST</a>
-                 <a href="/" class="btn btn-primary">TAG</a>
+                <a href="/post" class="btn btn-primary">Listes des posts</a>
+                <a href="/tag" class="btn btn-primary">Liste des tags</a>
                 <hr>
                 @if (session('status'))
                 <div class="alert alert-succes">
@@ -50,7 +50,7 @@
         <td>{{ $etudiant->prenom }}</td>
         <td>{{ $etudiant->classe }}</td>
         <td><span>{{ $etudiant->tuteur->nom }}</span></td>
-        <td> <img src="/images/{{ $etudiant->photo }}" alt="" style="width: 60px; height: 60px; border-radius: 50px"></td>
+        <td> <img src="images/{{ $etudiant->photo }}" alt="" style="width: 60px; height: 60px; border-radius: 50px"></td>
         <td>{{ $etudiant->ville->nomVille }}</td>
         <td>{{ $etudiant->nationalité->nomNationalité }}</td>
         <td>{{ $etudiant->groupe->nom }}</td>

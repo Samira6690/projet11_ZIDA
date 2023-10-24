@@ -14,8 +14,8 @@
             <div class="col s12">
                 <h1>PROJET 11</h1>
                 <hr>
-                 <a href="post/" class="btn btn-primary">POST</a>
-                 <a href="tag/" class="btn btn-primary">TAG</a>
+                 <a href="/ajout" class="btn btn-primary">Ajouter un post</a>
+                 <a href="/ajout1" class="btn btn-primary">Ajouter un tag</a>
                 <hr>
                 @if (session('status'))
                 <div class="alert alert-succes">
@@ -33,10 +33,10 @@
     @php
         $ide = 1;
     @endphp
-    @foreach ($tag as $tag)
+    @foreach ($tags as $tag)
     <tr>
         <td>{{$ide }}</td>
-        <td>{{ $post->nom }}</td>
+        <td>{{ $tag->nom }}</td>
         <td>
             <a href="/updat1-post/{{ $tag->id }}" class="btn btn-info">Update</a>
             <a href="/delete-post/{{ $tag->id }}" class="btn btn-danger">Delete</a>

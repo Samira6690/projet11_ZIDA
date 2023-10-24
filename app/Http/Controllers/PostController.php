@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\PostTag;
 use App\Models\Tag;
 use App\Models\Post;
 
@@ -10,11 +11,16 @@ class PostController extends Controller
     public function list_post()
     {
     $posts = Post::all();
-       return view('post.list', compact('posts'));
+    $tags = Tag::all();
+
+       return view('post.list', compact('posts', 'tags'));
     }
     public function ajout_post()
     {
-        return view('post.ajout');
+        $tags = Tag::all();
+        $posts = Post::all();
+
+        return view('post.ajout', compact('tags', 'posts'));
     }
     public function ajout_post_traitement(Request $request)
 
@@ -28,23 +34,26 @@ class PostController extends Controller
         $post ->titre = $request->titre;
         $post->contenu = $request->contenu;
         $post->save();
+
+        $tags = $request->tag_id;
+        $post->tags()->attach($tags);
         return redirect('/ajout')->with('status', 'Le post a bien été ajouté avec succes');
     }
     public function updat_post($id){
-        $post = Post::find($id);
-        // $etudiant = Etudiant::all();
+        $posts = Post::find($id);
+        $tags =Tag::all();
 
-        return view('post.updat', compact('post'));
+        // $etudiant = Etudiant::all();
+        return view('post.updat', compact('posts', 'tags'));
     }
     public function updat_post_traitement(Request $request){
         $request->validate([
-
         ]);
-        $post =  Post::find($request->id);
+        $post = Post::find($id);
+        $tags = Tag::all();
         $post ->titre = $request->titre;
         $post->contenu = $request->contenu;
         $post->update();
-
         return redirect('/post')->with('status', 'Le post a bien été modifier avec succes');
 
 }

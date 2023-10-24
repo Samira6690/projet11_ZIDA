@@ -39,7 +39,7 @@
                 </div><br>    --}}
 
 <button type="submit" class="btn btn-primary">AJOUTER UN TAG</button><br><br>
-<a href="/post" class="btn btn-danger">Revenir à la liste des posts</a>
+<a href="/tag" class="btn btn-danger">Revenir à la liste des tags</a>
 </form>
 
             </div>
